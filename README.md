@@ -22,3 +22,32 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## users テーブル
+
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| nickname           | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+
+### Association
+
+- has_many :recipes
+
+## recipes テーブル
+
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| name            | string     | null: false                    |
+| people_id       | integer    | null: false                    |
+| material        | text       | null: false                    |
+| step1           | text       | null: false                    |
+| step2           | text       |                                |
+| step3           | text       |                                |
+| step4           | text       |                                |
+| user            | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
