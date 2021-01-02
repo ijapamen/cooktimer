@@ -35,12 +35,12 @@ ActiveRecord::Schema.define(version: 2021_01_02_131037) do
 
   create_table "recipes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "people_id", null: false
+    t.integer "person_id", null: false
     t.text "material", null: false
     t.text "step1", null: false
-    t.text "step2", null: false
-    t.text "step3", null: false
-    t.text "step4", null: false
+    t.text "step2"
+    t.text "step3"
+    t.text "step4"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
