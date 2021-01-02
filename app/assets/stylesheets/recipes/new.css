@@ -1,0 +1,47 @@
+
+.recipes-image {
+  margin-bottom: 30px;
+}
+
+.recipes-text {
+  width: 100%;
+  margin: 5px 0 15px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
+
+.indispensable {
+  background: #ea352d;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.weight-bold-text {
+  font-weight: bold;
+  min-width: 170px;
+  margin-bottom: 10px;
+}
+
+.select-box {
+  height: 30px;
+  width: 30%;
+  background-color: #f5f5f5;
+  padding-left: 10px;
+  margin-bottom: 25px;
+  
+}
+
+.img-upload {
+  flex-wrap: wrap;
+  padding: 2vh 0;
+}
+
+.click-upload>p {
+  margin-bottom: 15px;
+}

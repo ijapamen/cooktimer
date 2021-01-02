@@ -1,0 +1,103 @@
+<div class="contents row">
+  <div class="container">
+
+    <h2>レシピの情報を入力</h2>
+
+    <%= form_with model: @recipe, local: true do |f| %>
+
+      <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+      <%= render 'shared/error_messages', model: f.object %>
+      <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+
+      <%# 料理の写真 %>
+      <div class="img-upload">
+        <div class="weight-bold-text">
+          料理の写真
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :image, class:"recipes-image",id:"recipe-image" %>
+        </div>
+      </div>
+      <%# /料理の写真 %>
+
+      <%# 料理名 %>
+      <div class="new-recipes">
+        <div class="weight-bold-text">
+          料理名
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :name, class:"recipes-text", id:"recipe-name", placeholder:"料理名（必須 40文字まで)", maxlength:"40" %>
+      </div>
+      <%# /料理名 %>
+
+      <%# 何人分？ %>
+      <div class="recipes-person">
+        <div class="weight-bold-text">
+          ◯人分
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:person_id, Person.all, :id, :name, {}, {class:"select-box", id:"recipe-person"}) %>
+      </div>
+      <%# /何人分？ %>
+
+      <%# 材料 %>
+      <div class="recipes-material">
+        <div class="weight-bold-text">
+          材料
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :material, class:"recipes-text", id:"recipe-info", placeholder:"材料・調味料  例）豚肉:350g" ,rows:"7" ,maxlength:"100" %>
+      </div>
+      <%# /材料 %>
+
+      <%# STEP1 %>
+      <div class="recipes-step">
+        <div class="weight-bold-text">
+          STEP1
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :step1, class:"recipes-text", id:"recipe-info", placeholder:"手順1を入力" ,rows:"5" ,maxlength:"100" %>
+      </div>
+      <%# /STEP1 %>
+
+      <%# STEP2 %>
+      <div class="recipes-step">
+        <div class="weight-bold-text">
+          STEP2
+        </div>
+        <%= f.text_area :step2, class:"recipes-text", id:"recipe-info", placeholder:"手順2を入力" ,rows:"5" ,maxlength:"100" %>
+      </div>
+      <%# /STEP2 %>
+
+      <%# STEP3 %>
+      <div class="recipes-step">
+        <div class="weight-bold-text">
+          STEP3
+        </div>
+        <%= f.text_area :step3, class:"recipes-text", id:"recipe-info", placeholder:"手順3を入力" ,rows:"5" ,maxlength:"100" %>
+      </div>
+      <%# /STEP3 %>
+
+      <%# STEP4 %>
+      <div class="recipes-step">
+        <div class="weight-bold-text">
+          STEP4
+        </div>
+        <%= f.text_area :step4, class:"recipes-text", id:"recipe-info", placeholder:"手順4を入力" ,rows:"5" ,maxlength:"100" %>
+      </div>
+      <%# /STEP4 %>
+
+      <%# 下部ボタン %>
+      <div class="recipes-post-btn">
+        <%= f.submit "投稿する" ,class:"post-btn" %>
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
+      <%# /下部ボタン %>
+
+    <% end%>
+  </div>
+</div>
