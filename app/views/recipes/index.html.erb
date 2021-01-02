@@ -1,6 +1,19 @@
 <%= render "shared/header" %>
+<div class='main'>
 
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+ <div class='item-contents'>
+    <ul class='recipe-lists'>
+      <% @recipes.each do |recipe| %>
+        <li class='list'>
+          <%= link_to recipe_path(recipe.id) do %>
+            <div class='recipe-img-content'>
+              <%= image_tag recipe.image.variant(resize: '190x190'), class: "recipe-img" if recipe.image.attached? %>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+ </div>
 
+</div>
 <%= render "shared/footer" %>
