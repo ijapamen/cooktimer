@@ -5,6 +5,7 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  /* https://saruwakakun.com/html-css/reference/box-sizing */
 }
 
 ul {
@@ -32,32 +33,21 @@ ul li {
 
 .row .grid-6 {
   float: left;
+  width: 48.2%;
   margin-left: 0.9%;
   margin-right: 0.9%;
 }
 
-.row .grid-6 {
-  width: 48.2%;
+
+
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
 }
 
-
-
-
-
-@media only screen and (max-width: 40em) {
-
-  .row {
-    width: 100%;
-    padding: 0 20px !important;
-  }
-
- 
-  .row .grid-6 {
-    float: none;
-    width: 100% !important;
-    margin: 0 !important;
-    position: static !important;
-  }
+.row:after {
+  clear: both;
 }
 
 /* タイトル */
@@ -96,7 +86,7 @@ header.header {
   padding: 10px;
   border-bottom: 1px solid #D8D8D8;
   background-color: #fff;
-  position: fixed;
+  position: fixed;          /* ヘッダーを固定 */
   top: 0;
   left: 0;
   right: 0;
@@ -131,10 +121,11 @@ header.header div.header__bar.row div.grid-6 a.post {
 
 header.header .user_nav {
   position: relative;
-  height: 100px;
+  height: 42px;
   right: 0;
 }
 
+/* ユーザー名表示 */
 header.header .user_nav span {
   top: 5px;
   display: block;
@@ -147,17 +138,20 @@ header.header .user_nav span {
   position: relative;
 }
 
+/* ユーザー名表示横の'▼' */
 header.header .user_nav span:after {
   content: '▼';
   font-size: .7em;
   margin-left: -4px;
 }
 
+/* プルダウンのホバー */
 header.header .user_nav span:hover ul {
   color: #57C3E9;
   display: block;
 }
 
+/* マイページ、ログアウトのボタンを表示するためのプルダウン */
 header.header .user_nav ul {
   display: none;
   position: absolute;
@@ -168,13 +162,39 @@ header.header .user_nav ul {
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* プルダウンの背景色 */
 header.header .user_nav ul li {
   background-color: #f0f0f0;
 }
 
+/* プルダウンの装飾 */
 header.header .user_nav ul li a {
   display: block;
   padding: 10px 20px;
   text-align: left;
   border-bottom: 1px solid #d8d8d8;
+}
+
+ /* スマホ表示時 */
+@media (max-width: 663px) {
+
+  .header__bar .row,
+  h1 .grid-6,
+  .user_nav .grid-6,
+  ul .user__info,
+  .post {
+    width: 100vw;
+  }
+
+  header.header {
+    padding: 10px;
+    border-bottom: 1px solid #D8D8D8;
+    background-color: #fff;
+    position: fixed;          /* ヘッダーを固定 */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    height: 120px;
+  }
 }
