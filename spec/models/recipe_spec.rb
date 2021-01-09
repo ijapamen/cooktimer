@@ -7,7 +7,6 @@ RSpec.describe Recipe, type: :model do
   end
 
   describe 'レシピ登録' do
-
     context 'レシピ登録がうまくいくとき' do
       it 'image、name、person_id、mateial、step1、user_idが存在すれば登録できる' do
         expect(@recipe).to be_valid
@@ -28,7 +27,7 @@ RSpec.describe Recipe, type: :model do
       it 'person_idの値が0だと登録できない' do
         @recipe.person_id = '0'
         @recipe.valid?
-        expect(@recipe.errors.full_messages).to include("Person must be other than 0")
+        expect(@recipe.errors.full_messages).to include('Person must be other than 0')
       end
       it 'materialが空だと登録できない' do
         @recipe.material = ''
@@ -43,10 +42,8 @@ RSpec.describe Recipe, type: :model do
       it 'userが紐付いていないと登録できない' do
         @recipe.user = nil
         @recipe.valid?
-        expect(@recipe.errors.full_messages).to include("User must exist")
+        expect(@recipe.errors.full_messages).to include('User must exist')
       end
     end
-
   end
 end
-

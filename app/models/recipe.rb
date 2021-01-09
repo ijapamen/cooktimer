@@ -9,12 +9,10 @@ class Recipe < ApplicationRecord
     validates :image
     validates :name
     validates :person_id
-    validates :material 
+    validates :material
     validates :step1
   end
 
-  #人数分の選択が「--」の時は保存できないようにする
+  # 人数分の選択が「--」の時は保存できないようにする
   validates :person_id, numericality: { other_than: 0 }
-    
-
 end

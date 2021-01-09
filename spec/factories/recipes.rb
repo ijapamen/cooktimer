@@ -9,6 +9,5 @@ FactoryBot.define do
     step2             { '' }
     step3             { '' }
     step4             { '' }
-    
   end
 end
