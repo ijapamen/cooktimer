@@ -31,7 +31,7 @@ ul li {
 }
 
 
-.row .grid-6 {
+.row .title {
   float: left;
   width: 48.2%;
   margin-left: 0.9%;
@@ -61,9 +61,9 @@ a:hover {
   color: #57C3E9;
 }
 
-/* 投稿するボタン */
+/* ヘッダーボタン */
 .btn,
-header.header div.header__bar.row div.grid-6 a.post {
+header.header div.header__bar.row div.devise a.post {
   padding: 8px 20px;
   font-size: 14px;
   border: 2px solid #57C3E9;
@@ -74,9 +74,9 @@ header.header div.header__bar.row div.grid-6 a.post {
   display: inline-block;
 }
 
-/* 投稿するボタン ホバー */
+/* ヘッダーボタン ホバー */
 .btn:hover,
-header.header div.header__bar.row div.grid-6 a.post:hover {
+header.header div.header__bar.row div.devise a.post:hover {
   border-color: #9bdbf2;
   color: #9bdbf2;
 }
@@ -98,22 +98,24 @@ header.header div.header__bar.row {
   position: relative;
 }
 
-header.header div.header__bar.row h1.grid-6 {
+header.header div.header__bar.row h1.title {
   font-size: 20px;
   line-height: 41px;
   float: left;
 }
 
-header.header div.header__bar.row h1.grid-6 a {
+header.header div.header__bar.row h1.title a {
   display: block;
 }
 
-header.header div.header__bar.row div.grid-6 {
+
+
+header.header div.header__bar.row div.devise {
   float: right;
   text-align: right;
 }
 
-header.header div.header__bar.row div.grid-6 a.post {
+header.header div.header__bar.row div.devise a.post {
   width: 120px;
   display: inline-left;
   margin-left: 10px;
@@ -175,26 +177,93 @@ header.header .user_nav ul li a {
   border-bottom: 1px solid #d8d8d8;
 }
 
+
  /* スマホ表示時 */
 @media (max-width: 663px) {
 
-  .header__bar .row,
-  h1 .grid-6,
-  .user_nav .grid-6,
-  ul .user__info,
-  .post {
-    width: 100vw;
+  * {
+    float: none;
+    position: static;
   }
 
-  header.header {
-    padding: 10px;
-    border-bottom: 1px solid #D8D8D8;
-    background-color: #fff;
-    position: fixed;          /* ヘッダーを固定 */
-    top: 0;
-    left: 0;
+  .row .title {
+    width: 38.2%;
+    margin-left: 0.9%;
+    margin-right: 0.9%;
+  }
+
+  .title a {
+    font-size: 13px;
+  }
+
+  header.header div.header__bar.row div.devise a.post {
+    width: 80px;
+    padding-top: 9px;
+    padding-bottom: 3px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+    margin-left: 5px;
+    height: 36px;
+  }
+
+  /* ボタン */
+  .btn,
+  header.header div.header__bar.row div.devise a.post {
+    font-size: 10px;
+    border: 2px solid #57C3E9;
+    color: #57C3E9;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  /* ユーザー名表示 */
+  header.header .user_nav span {
+    top: 5px;
+    display: block;
+    float: left;
+    margin-top: 2.5px;
+    margin-left: 5px;
+    width: 90px;
+    height: 36px;
+    font-size: .8em;
+    cursor: pointer;
+    position: relative;
+  }
+
+  /* ユーザー名表示横の'▼' */
+  header.header .user_nav span:after {
+    content: '▼';
+    font-size: .5em;
+    margin-left: -4px;
+  }
+
+  /* マイページ、ログアウトのボタンを表示するためのプルダウン */
+  header.header .user_nav ul {
+    display: none;
+    position: absolute;
+    top: 36px;
     right: 0;
-    z-index: 5;
-    height: 120px;
+    border-left: 1px solid #d8d8d8;
+    border-right: 1px solid #d8d8d8;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* プルダウンの背景色 */
+  header.header .user_nav ul li {
+    background-color: #f0f0f0;
+  }
+
+  /* プルダウンの装飾 */
+  header.header .user_nav ul li a {
+    font-size: .7em;
+    display: block;
+    padding: 5px 10px;
+    text-align: left;
+    border-bottom: 1px solid #d8d8d8;
   }
 }
