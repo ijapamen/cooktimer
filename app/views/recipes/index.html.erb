@@ -13,6 +13,23 @@
       <% end %>
     </li>
   <% end %>
+
+  <%# レシピがない場合のダミー %>
+  <%# レシピがある場合は表示されない %>
+  <% if @recipes.blank? %>
+    <li class='list'>
+      <%= link_to '#' do %>
+        <%= image_tag "app/assets/images/sample.jpg", class: "recipe-img" %>
+        <div class='recipe-info'>
+          <h3 class='recipe-name'>
+            レシピを投稿してね！
+          </h3>
+        </div>
+      <% end %>
+    </li>
+  <% end %>
+  <%# //レシピがある場合は表示されない %>
+  <%# /レシピがない場合のダミー %>
 </ul>
 
 
