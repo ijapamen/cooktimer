@@ -115,7 +115,7 @@ div.contents.row .new_user {
 
   .recipe-img {
     width: 50vw;
-    height: 25vh;
+    height: auto;
   }
 
  /* スマホ表示時 */
@@ -127,6 +127,6 @@ div.contents.row .new_user {
 
   .recipe-img {
     width: 100vw;
-    height: 50vh;
+    height: auto;
   }
  }
