@@ -1,6 +1,36 @@
 <%= render "shared/header" %>
 
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<ul class='recipe-lists'>
+  <% @recipes.each do |recipe| %>
+    <li class='list'>
+      <%= link_to "#" do %>
+        <div class='recipe-img-content'>
+          <%= image_tag recipe.image.variant(resize: '350x350'), class: "recipe-img" if recipe.image.attached? %>
+          <h3 class='recipe-name'>
+            <%= recipe.name %>
+          </h3>
+        </div>
+      <% end %>
+    </li>
+  <% end %>
+
+  <%# レシピがない場合のダミー %>
+  <%# レシピがある場合は表示されない %>
+  <% if @recipes.blank? %>
+    <li class='list'>
+      <%= link_to '#' do %>
+        <%= image_tag "app/assets/images/sample.jpg", class: "recipe-img" %>
+        <div class='recipe-info'>
+          <h3 class='recipe-name'>
+            レシピを投稿してね！
+          </h3>
+        </div>
+      <% end %>
+    </li>
+  <% end %>
+  <%# //レシピがある場合は表示されない %>
+  <%# /レシピがない場合のダミー %>
+</ul>
+
 
 <%= render "shared/footer" %>

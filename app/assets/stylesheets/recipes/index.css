@@ -22,3 +22,111 @@ body {
   font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
   margin: 0;
 }
+
+p {
+  line-height: 1.57;
+  letter-spacing: 0.1em;
+  font-size: 14px;
+  color: #666;
+  font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
+  margin: 0;
+}
+
+.container {
+  margin: 20px 0;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  background-color: white;
+  box-sizing: border-box;
+}
+
+div.contents.row h2 {
+  font-size: large;
+  margin: 20px 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+div.contents.row h2 strong {
+  font-weight: bold;
+  padding-right: 5px;
+  font-size: 1.2em;
+}
+
+div.contents.row .new_user {
+  font-family: "游ゴシック", "YuGothic";
+}
+
+.row {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 660px;
+  *zoom: 1;
+}
+
+.recipe-lists {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list {
+  position: relative;
+  overflow: hidden;
+  width: calc(100% / 3);
+}
+
+.recipe-img-content {
+  position: relative;
+}
+
+.recipe-img {
+  width: 33.33vw;
+  height: 33.33vh;
+}
+
+/* レシピ写真 ホバー */
+.recipe-name {
+  position: absolute;
+  bottom: -60px;
+  text-align: center;
+  z-index: 2;
+  width: 100%;
+  height: 60px;
+  color: #f5f5f3;
+  background: rgba(0,0,0,.6);
+  font-size: 1.5rem;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.list:hover .recipe-name {
+  bottom: 0;
+}
+
+ /* タブレット表示時 */
+ @media (max-width: 1024px) {
+
+  .list {
+    width: 50%;
+  }
+
+  .recipe-img {
+    width: 50vw;
+    height: auto;
+  }
+
+ /* スマホ表示時 */
+@media (max-width: 599px) {
+
+  .list {
+    width: 100%;
+  }
+
+  .recipe-img {
+    width: 100vw;
+    height: auto;
+  }
+ }

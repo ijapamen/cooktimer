@@ -40,7 +40,7 @@ Things you may want to cover:
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
 | name            | string     | null: false                    |
-| people_id       | integer    | null: false                    |
+| person_id       | integer    | null: false                    |
 | material        | text       | null: false                    |
 | step1           | text       | null: false                    |
 | step2           | text       |                                |
