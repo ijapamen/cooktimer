@@ -45,3 +45,23 @@
 .click-upload>p {
   margin-bottom: 15px;
 }
+
+
+.back-btn {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin: 5px 0 15px;
+  padding: 10px;
+  background-color: #81dcf3;
+  border-radius: 20px;
+  color: #fff;
+  border: 0;
+  font-size: 18px;
+  font-family: "游ゴシック", "YuGothic";
+}
+
+.back-btn:hover {
+  color: #fff;
+  background-color: #84d3ef;
+}

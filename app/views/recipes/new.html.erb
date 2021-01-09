@@ -34,10 +34,10 @@
       </div>
       <%# /料理名 %>
 
-      <%# 何人分？ %>
+      <%# 人数分 %>
       <div class="recipes-person">
         <div class="weight-bold-text">
-          ◯人分
+          人数分
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:person_id, Person.all, :id, :name, {}, {class:"select-box", id:"recipe-person"}) %>
@@ -50,7 +50,7 @@
           材料
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :material, class:"recipes-text", id:"recipe-info", placeholder:"材料・調味料  例）豚肉:350g" ,rows:"7" ,maxlength:"100" %>
+        <%= f.text_area :material, class:"recipes-text", id:"recipe-info", placeholder:"材料\n 例）豚肉:350g\n\n調味料\n 例）砂糖:大さじ1" ,rows:"7" ,maxlength:"100" %>
       </div>
       <%# /材料 %>
 
