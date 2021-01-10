@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit]
+  before_action :set_recipe, only: [:show, :edit, :update]
   def index
     @recipes = Recipe.all.order('created_at DESC')
   end
@@ -24,6 +24,11 @@ class RecipesController < ApplicationController
   def edit
     redirect_to root_path if current_user.id != @recipe.user_id
   end
+
+  def update
+    @recipe.update(recipe_params)
+  end
+  
 
   private
 
