@@ -1,0 +1,46 @@
+<%= render "shared/header" %>
+
+<div class ="contents row">
+
+  <%# レシピの概要 %>
+  <div class="content_post">
+    <div class="recipe-image">
+      <%= image_tag @recipe.image ,class:"recipe-box-img" %>
+    </div>
+    <div class="name">
+      <%= @recipe.name %>
+    </div>
+    <div class="detail person_id">
+      <b>材料</b>(<%= @recipe.person.name %>)
+    </div>
+    <div class="detail material">
+      <%= @recipe.material %>
+    </div>
+
+    <div class="detail step">
+      <b>作り方</b>
+      <div class="step1">
+        <b>STEP1</b>
+        <br><%= @recipe.step1 %></br>
+      </div>
+      <div class="step2">
+        <b>STEP2</b>
+        <br><%= @recipe.step2 %></br>
+      </div>
+      <div class="step3">
+        <b>STEP3</b>
+        <br><%= @recipe.step3 %></br>
+      </div>
+      <div class="step4">
+        <b>STEP4</b>
+        <br><%= @recipe.step4 %></br>
+      </div>
+    </div>
+  </div>
+  <%# レシピの概要 %>  
+
+
+</div>
+
+
+<%= render "shared/footer" %>
