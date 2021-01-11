@@ -32,5 +32,37 @@
 .step1 b,.step2 b,.step3 b,.step4 b {
   font-size: 1.2rem;
   color: #f5a123;
+}
 
+.option {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* 編集ボタン */
+.recipe-red-btn {
+  border-radius: 40px;
+  width: 15vw;
+  min-width: 200px;
+  color: #f36710;
+  border: 2px solid#f5a123;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+/* 削除ボタン */
+.recipe-destroy {
+  border-radius: 40px;
+  width: 15vw;
+  min-width: 200px;
+
+  padding: 1vh 0;
+  color: black;
+  border: 2px solid #2d2d2d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

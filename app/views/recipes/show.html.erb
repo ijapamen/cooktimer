@@ -36,10 +36,21 @@
         <br><%= @recipe.step4 %></br>
       </div>
     </div>
+    <%# レシピの概要 %>
+
+    <%# 編集ボタンと削除ボタン%>
+    <div class="option">
+      <% if user_signed_in? %>
+        <% if current_user.id == @recipe.user_id %>
+          <%= link_to '編集する', edit_recipe_path(@recipe.id), method: :get, class: "recipe-red-btn" %>
+          <%= link_to '削除する', recipe_path(@recipe.id), method: :delete, class:'recipe-destroy' %>
+        <% end %>
+      <% end %>
+    </div>
+    <%# 編集ボタンと削除ボタン%>
+
+
   </div>
-  <%# レシピの概要 %>  
-
-
 </div>
 
 
