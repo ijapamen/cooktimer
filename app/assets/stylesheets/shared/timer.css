@@ -1,0 +1,48 @@
+
+
+.timer-container {
+  margin: 20px auto;
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.timer {
+  background: #ddd;
+  height: 120px;
+  line-height: 120px;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+.timer-container {
+  color: black;
+}
+
+#start {
+  color: white;
+  background-color: #F36710;
+}
+
+.controls > div {
+  cursor: pointer;
+  user-select: none;
+  width: 130px;
+  background: #ddd;
+  height: 45px;
+  line-height: 45px;
+  float: left;
+}
+
+.controls {
+  overflow: hidden;
+}
+
+.controls > div + div {
+  margin-left: 15px;
+}
+
+.controls > div:hover {
+  opacity: 0.7;
+}
