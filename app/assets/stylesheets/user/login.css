@@ -1,4 +1,84 @@
+/* ログインページ */
+.log-in {
+  grid-template-rows:
+          [head] 100px
+          [login] auto
+          [btn] 410px
+          [foot] 100px;
+}
+
+/* ログインページ：ログイン */
+.login {
+  grid-row: login;
+}
+
+/* ヘッダー下のボーダー */
+.log-in::before {
+  content: '';
+  background: #eeeeee;
+  height: 1px;
+  grid-column: 1 / -1;
+  grid-row: login;
+}
+
 .login-flash-message {
   text-align: center;
   color: red;
 }
+
+.login h2 {
+  text-align: center;
+}
+
+.login b {
+  font-size: 13px;
+}
+
+.login .email {
+  padding: 20px 0;
+}
+
+/* ログインページ：ボタン */
+.log-in .btn {
+  grid-row: btn;
+}
+
+.btn {
+  padding: 20px 0;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #f36710;
+  border-radius: 20px;
+  color: #fff;
+  border: 0;
+  font-size: 16px;
+  font-family: "游ゴシック", "YuGothic";
+  text-decoration: none;
+}
+  
+.login-btn:hover {
+  background-color: #f5a123;
+  text-decoration: underline;
+}
+
+
+/* ===== PC版の設定 ===== */
+@media (min-width: 768px) {
+  /* PC版：ページ全体の設定 */
+  .log-in {
+    grid-template-rows:
+            [head] 100px
+            [login] auto
+            [btn] 510px
+            [foot] 100px;
+  }
+ 
+ /* パーツの配置 */
+  .log-in > * {
+    grid-column: 3 / -3;
+  }
+}
+/* ===== PC版の設定ここまで ===== */

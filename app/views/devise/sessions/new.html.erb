@@ -1,39 +1,39 @@
-<div class="contents row">
-  <div class="container">
+<%= render "shared/header" %>
 
-    <h2>ログイン</h2>
 
-    <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+<body class="log-in">
 
-      <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-      <%= render 'shared/error_messages', model: f.object %>
-      <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+  <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
 
+    <%# エラー発生時にメッセージを表示 %>
+    <%= render 'shared/error_messages', model: f.object %>
+    <%# //エラー発生時にメッセージを表示 %>
+
+    <div class="login">
+      <h2>ログイン</h2>
       <div class='login-flash-message'>
         <%= flash[:notice] %>
         <%= flash[:alert] %>
       </div>
 
-      <div class="field">
-        <div class="weight-bold-text">
-          メールアドレス
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可",　autofocus: true, autocomplete: "email" %>
+      <div class="email">
+        <b>メールアドレス<span class="indispensable">必須</span></b>
+        <%= f.email_field :email, class:"form", id:"email", placeholder:"PC・携帯どちらでも可",　autofocus: true, autocomplete: "email" %>
       </div>
 
-      <div class="field">
-        <div class="weight-bold-text">
-          パスワード
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.password_field :password,  class:"input-default", id:"password", placeholder:"6文字以上の半角英数字", autocomplete: "current-password" %>
+      <div class="password">
+        <b>パスワード<span class="indispensable">必須</span></b>
+        <%= f.password_field :password,  class:"form", id:"password", placeholder:"6文字以上の半角英数字", autocomplete: "current-password" %>
       </div>
+    </div>
 
-      <div class="actions">
-        <%= f.submit "ログイン" %>
-      </div>
-    <% end %>
-  </div>
-</div>
+    <div class="btn">
+      <%= f.submit "ログイン", class:"login-btn" %>
+    </div>
 
+  <% end %>
+
+</body>
+
+
+<%= render "shared/footer" %>
