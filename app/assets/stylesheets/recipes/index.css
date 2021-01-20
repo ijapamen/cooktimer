@@ -158,6 +158,9 @@ recipe-lists a:hover {
   cursor: pointer;
 }
 
+recipe-lists h3 {
+  text-decoration: none;
+}
 
 
 /* ===== PC版の設定 ===== */
