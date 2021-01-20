@@ -1,68 +1,119 @@
-.content_post {
-  margin: 20px 0;
-  padding: 30px;
-  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
-  background-color: white;
-  box-sizing: border-box;
+/* レシピページ */
+.show-recipe {
+  grid-template-rows:
+          [head] 100px
+          [recipe] auto
+          [sub] auto
+          [foot] 100px;
 }
 
-.recipe-box-img {
-  width: 100%;
+/* レシピページ：レシピ */
+.show-recipe .recipe {
+  grid-row: recipe;
 }
 
-.name {
-  font-size: 2rem;
+/* ヘッダー下のボーダー */
+.show-recipe::before {
+  content: '';
+  background: #eeeeee;
+  height: 1px;
+  grid-column: 1 / -1;
+  grid-row: recipe;
+}
+
+.recipe a {
+  display: block;
+  font-size: 14px;
+}
+
+/* レシピ画像 */
+figure .image {
+  grid-column: 1 / -1;
+}
+
+.recipe .name {
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 15px;
-  background: linear-gradient(transparent 60%, #f5a123 60%);
+  margin-bottom: 20px;
+  background: linear-gradient(transparent 90%, #f5a123 40%);
 }
 
-.detail {
-  font-size: 1.3rem;
+b {
+  font-size: 16px;
 }
 
-.material {
-  margin-bottom: 15px;
+.recipe .material {
+  margin-bottom: 20px;
 }
 
-.step1,.step2,.step3,.step4 {
+.step a {
   margin-bottom: 10px;
 }
 
-.step1 b,.step2 b,.step3 b,.step4 b {
-  font-size: 1.2rem;
+.step b {
+  font-size: 15px;
   color: #f5a123;
 }
 
-.option {
-  display: flex;
-  justify-content: center;
-  position: relative;
+/* レシピページ：タイマーと編集・削除ボタン */
+.show-recipe .sub {
+  grid-row: sub;
 }
 
 /* 編集ボタン */
-.recipe-red-btn {
-  border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
-  color: #f36710;
-  border: 2px solid#f5a123;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
+.edit-btn {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f36710;
+  border-radius: 20px;
+  color: #fff;
+  border: 0;
+  font-size: 16px;
+  font-family: "游ゴシック", "YuGothic";
+  text-decoration: none;
+}
+
+.edit-btn:hover {
+  background-color: #f5a123;
+  text-decoration: underline;
 }
 
 /* 削除ボタン */
-.recipe-destroy {
-  border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
-
-  padding: 1vh 0;
-  color: black;
-  border: 2px solid #2d2d2d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.destroy-btn {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background-color: #f5a123;
+  border-radius: 20px;
+  color: #fff;
+  border: 0;
+  font-size: 16px;
+  font-family: "游ゴシック", "YuGothic";
+  text-decoration: none;
 }
+
+.destroy-btn:hover {
+  color: #fff;
+  background-color: #f8ca25;
+  text-decoration: underline;
+}
+
+/* ===== PC版の設定 ===== */
+@media (min-width: 768px) {
+  /* PC版：ページ全体の設定 */
+  .show-recipe {
+    grid-template-rows:
+            [head] 100px
+            [recipe] auto
+            [sub] auto
+            [foot] 100px;
+  }
+ 
+ /* パーツの配置 */
+  .show-recipe > * {
+    grid-column: 3 / -3;
+  }
+}
+/* ===== PC版の設定ここまで ===== */
