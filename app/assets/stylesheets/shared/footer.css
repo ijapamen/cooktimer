@@ -1,3 +1,16 @@
-footer p {
-  text-align: center;
+/* フッター */
+footer {
+  grid-row: foot;
+  justify-self: center;
+  align-self: center;
+  font-size: 13px;
+}
+
+/* フッターのバー */
+body::after {
+  content: "";
+  background-color: #eeeeee;
+  grid-column: 1 / -1;
+  grid-row: foot;
+  z-index: -1;
 }
