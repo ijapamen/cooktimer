@@ -1,13 +1,16 @@
-body,
-html {
-  height: 100%;
-  background-color: #f5f5f3;
+@charset "UTF-8";
+
+/* 基本設定 */
+* {
+  margin: 0;
 }
 
-body {
-  padding-top: 60px;
+img {
+  width: 100%;
+  height: auto;
 }
 
+/* フォントの系統、文字の体裁を統一 */
 h1,
 h2,
 h3,
@@ -32,101 +35,179 @@ p {
   margin: 0;
 }
 
-.container {
-  margin: 20px 0;
-  padding: 30px;
-  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
-  background-color: white;
-  box-sizing: border-box;
+/* ページ全体の設定 */
+body {
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  grid-template-rows: 
+              [head] 100px
+              [title] auto
+              [sub] auto
+              [recent] auto
+              [foot] 100px;
+  grid-row-gap: 20px;
+  row-gap: 20px;
 }
 
-div.contents.row h2 {
-  font-size: large;
-  margin: 20px 0;
-  padding: 0;
+/* パーツの配置 */
+body > * {
+  grid-column: 2 / -2;
+}
+
+/* ヒーローイメージ */
+figure.hero {
+  grid-column: 1 / -1;
+  grid-row: title / span 2;
+}
+
+figure.hero img {
+  height: 547px;
+  object-fit: cover;
+  vertical-align: bottom;
+  filter: brightness(70%);
+  z-index: -1;
+  position: relative; /* Edge用の設定 */
+}
+
+/* タイトルコピー */
+h1 {
+  grid-row: title;
+  justify-self: center;
+  align-self: end;
+  color: #ffffff;
+  font-size: 35px;
   font-weight: normal;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 5px #444444;
+  text-align: center;
 }
 
-div.contents.row h2 strong {
+/* サブコピー */
+p {
+  grid-row: sub;
+  text-align: center;
+  text-shadow: 0 0 5px #444444;
+  color: #ffffff;
+}
+
+/* アイコン */
+p img {
+  width: 80px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 5px #444444);
+}
+
+.plus-icon {
+  width: 28px;
+  margin: 0 20px 45px;
+}
+
+/* レシピ投稿ボタン */
+.post {
+  margin-top: 20px;
+  padding: 10px 30px;
+  font-size: 16px;
+  border: 3px solid #ffffff;
+  color: #ffffff;
+  background-color: #f36710;
   font-weight: bold;
-  padding-right: 5px;
-  font-size: 1.2em;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  display: inline-block;
+  text-shadow: none;
 }
 
-div.contents.row .new_user {
-  font-family: "游ゴシック", "YuGothic";
+.post:hover {
+  background-color: #f5a123;
+  text-decoration: underline;
 }
 
-.row {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-  max-width: 660px;
-  *zoom: 1;
+/* レシピ一覧 */
+recipe-lists {
+  grid-row: recent;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px 10px;
+  gap: 20px 10px;
 }
 
-.recipe-lists {
-  display: flex;
-  flex-wrap: wrap;
+recipe-lists h2 {
+  grid-column: 1 / -1;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
 }
 
 .list {
-  position: relative;
-  overflow: hidden;
-  width: calc(100% / 3);
-}
-
-.recipe-img-content {
-  position: relative;
+  width: 100%;
 }
 
 .recipe-img {
-  width: 33.33vw;
-  height: 33.33vh;
-}
-
-/* レシピ写真 ホバー */
-.recipe-name {
-  position: absolute;
-  bottom: -60px;
-  text-align: center;
-  z-index: 2;
   width: 100%;
-  height: 60px;
-  color: #f5f5f3;
-  background: rgba(0,0,0,.6);
-  font-size: 1.5rem;
-  -webkit-transition: .3s;
-  transition: .3s;
+  height: auto;
 }
 
-.list:hover .recipe-name {
-  bottom: 0;
+recipe-lists a {
+  font-size: 14px;
 }
 
- /* タブレット表示時 */
- @media (max-width: 1024px) {
+recipe-lists a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 
-  .list {
-    width: 50%;
+
+
+/* ===== PC版の設定 ===== */
+@media (min-width: 768px) {
+  /* PC版：ページ全体の設定 */
+  body {
+    grid-template-columns:
+              0.2fr repeat(6,1fr) 0.2fr;
+    grid-column-gap: 5%;
+    column-gap: 5%;
+    grid-template-rows:
+              [head] 100px
+              [title sub] auto
+              [recent] auto
+              [foot] 100px;
   }
 
-  .recipe-img {
-    width: 50vw;
-    height: auto;
+  /* PC版：ヒーローイメージ */
+  figure.hero {
+    grid-row: title;
+    margin-top: -20px;
   }
 
- /* スマホ表示時 */
-@media (max-width: 599px) {
-
-  .list {
-    width: 100%;
+  /* PC版：タイトルコピー */
+  h1 {
+    font-size: 40px;
+    grid-column: 2 / span 3;
+    max-width: 460px;
+    align-self: center;
   }
 
-  .recipe-img {
-    width: 100vw;
-    height: auto;
+  /* PC版：サブコピー */
+  p {
+    grid-column: 5 / span 3;
+    align-self: center;
   }
- }
+
+   /* PC版：レシピ投稿ボタン */
+  .post {
+    padding: 12px 50px;
+    font-size: 18px;
+    border: 4px solid #ffffff;
+  }
+
+  /* PC版：レシピ一覧 */
+  recipe-lists {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    column-gap: 20px;
+
+  }
+}
+/* ===== PC版の設定ここまで ===== */

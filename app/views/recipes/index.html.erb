@@ -1,36 +1,64 @@
 <%= render "shared/header" %>
 
-<ul class='recipe-lists'>
-  <% @recipes.each do |recipe| %>
-    <li class='list'>
-      <%= link_to recipe_path(recipe.id) do %>
-        <div class='recipe-img-content'>
-          <%= image_tag recipe.image.variant(resize: '350x350'), class: "recipe-img" if recipe.image.attached? %>
-          <h3 class='recipe-name'>
-            <%= recipe.name %>
-          </h3>
-        </div>
-      <% end %>
-    </li>
-  <% end %>
 
-  <%# レシピがない場合のダミー %>
-  <%# レシピがある場合は表示されない %>
-  <% if @recipes.blank? %>
-    <li class='list'>
-      <%= link_to '#' do %>
-        <%= image_tag "app/assets/images/sample.jpg", class: "recipe-img" %>
-        <div class='recipe-info'>
-          <h3 class='recipe-name'>
-            レシピを投稿してね！
-          </h3>
-        </div>
-      <% end %>
-    </li>
-  <% end %>
-  <%# //レシピがある場合は表示されない %>
-  <%# /レシピがない場合のダミー %>
-</ul>
+<body>
+
+  <figure class="hero">
+    <%= image_tag "hero-img.jpg", class: "hero-img" %>
+  </figure>
+
+  <h1>キッチンタイマーがあるレシピアプリ</h1>
+
+  <p>
+    <%= image_tag "タイマーアイコン.svg" %>
+    <%= image_tag "プラスマークアイコン 6.svg", class: "plus-icon" %>
+    <%= image_tag "コックアイコン.svg" %>
+    <br>いちいちキッチンタイマーを押しに行く…
+    <br>わざわざタイマーアプリを開く…
+    <br>そんな”めんどくさい"を
+    <br>解消しました
+    <%# レシピ投稿ボタン %>
+    <% if user_signed_in? %> <%# ログインユーザーのみ表示 %>
+      <br><%= link_to "レシピを投稿", new_recipe_path, class: "post" %>
+    <% end %>
+    <%# レシピ投稿ボタン %>
+  </p>
+
+  <recipe-lists>
+
+    <h2>新着レシピ</h2>
+
+    <% @recipes.each do |recipe| %>
+      <div class="list">
+        <%= link_to recipe_path(recipe.id) do %>
+          <div class='recipe-img-content'>
+            <%= image_tag recipe.image.variant(resize: '350x350'), class: "recipe-img" if recipe.image.attached? %>
+          </div>
+          <a class='recipe-name'>
+            <%= recipe.name %>
+          </a>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%# レシピがない場合のみ表示されるサンプル %>
+    <% if @recipes.blank? %>
+      <div class='list'>
+        <%= link_to '#' do %>
+          <%= image_tag "sample.jpg", class: "recipe-img" %>
+          <div class='recipe-info'>
+            <h3 class='recipe-name'>
+              レシピを投稿してね！
+            </h3>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <%# /レシピがない場合のみ表示されるサンプル %>
+
+  </recipe-lists>
+
+</body>
 
 
 <%= render "shared/footer" %>
