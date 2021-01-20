@@ -1,25 +1,88 @@
-.input-default {
-  width: 100%;
-  margin: 5px 0 15px;
-  padding: 10px;
-  border: 1px solid #D8D8D8;
-  border-radius: 5px;
-  font-family: "游ゴシック", "YuGothic";
+/* ログインページ */
+.sign-up {
+  grid-template-rows:
+          [head] 100px
+          [signup] auto
+          [btn] auto
+          [foot] 100px;
 }
 
-form input[type="submit"] {
+/* サインアップページ：サインイン */
+.sign-up {
+  grid-row: signup;
+}
+
+/* ヘッダー下のボーダー */
+.sign-up::before {
+  content: '';
+  background: #eeeeee;
+  height: 1px;
+  grid-column: 1 / -1;
+  grid-row: signup;
+}
+
+.sign-up h2 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.sign-up b {
+  font-size: 13px;
+}
+
+.sign-up p {
+  color: #666;
+  font-weight: normal;
+  text-shadow: none;
+  font-size: 13px;
+  text-align: start;
+  margin: 8px 0;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  }
+}
+
+.nickname, .email, .password,
+.password_confirmation {
+  padding-bottom: 20px;
+}
+
+/* サインアップページ：ボタン */
+.sign-up .btn {
+  grid-row: btn;
+}
+
+.signup-btn {
   width: 100%;
-  margin: 5px 0 15px;
   padding: 10px;
-  background-color: #57C3E9;
+  background-color: #f36710;
   border-radius: 20px;
   color: #fff;
   border: 0;
-  font-size: 18px;
+  font-size: 16px;
   font-family: "游ゴシック", "YuGothic";
-  
+  text-decoration: none;
 }
 
-form input[type="submit"]:hover {
-  background-color: #84d3ef;
+.signup-btn:hover {
+  background-color: #f5a123;
+  text-decoration: underline;
 }
+
+/* ===== PC版の設定 ===== */
+@media (min-width: 768px) {
+  /* PC版：ページ全体の設定 */
+  .sign-up {
+    grid-template-rows:
+            [head] 100px
+            [signup] auto
+            [btn] auto
+            [foot] 100px;
+  }
+ 
+ /* パーツの配置 */
+  .sign-up > * {
+    grid-column: 3 / -3;
+  }
+}
+/* ===== PC版の設定ここまで ===== */

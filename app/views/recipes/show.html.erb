@@ -1,59 +1,60 @@
 <%= render "shared/header" %>
 
-<div class ="contents row">
+
+<body class="show-recipe">
 
   <%# レシピの概要 %>
-  <div class="content_post">
-    <div class="recipe-image">
-      <%= image_tag @recipe.image ,class:"recipe-box-img" %>
-    </div>
+  <div class="recipe">
+    <figure class="image">
+      <%= image_tag @recipe.image ,class:"recipe-img" %>
+    </figure>
     <div class="name">
       <%= @recipe.name %>
     </div>
-    <div class="detail person_id">
-      <b>材料</b>(<%= @recipe.person.name %>)
-    </div>
-    <div class="detail material">
+    <a class="person_id">
+      <b>材料(<%= @recipe.person.name %>)</b>
+    </a>
+    <a class="material">
       <%= @recipe.material %>
-    </div>
+    </a>
 
-    <div class="detail step">
-      <b>作り方</b>
-      <div class="step1">
+    <b>作り方</b>
+    <div class="step">
+      <a class="step1">
         <b>STEP1</b>
-        <br><%= @recipe.step1 %></br>
-      </div>
-      <div class="step2">
+        <br><%= @recipe.step1 %>
+      </a>
+      <a class="step2">
         <b>STEP2</b>
-        <br><%= @recipe.step2 %></br>
-      </div>
-      <div class="step3">
+        <br><%= @recipe.step2 %>
+      </a>
+      <a class="step3">
         <b>STEP3</b>
-        <br><%= @recipe.step3 %></br>
-      </div>
-      <div class="step4">
+        <br><%= @recipe.step3 %>
+      </a>
+      <a class="step4">
         <b>STEP4</b>
-        <br><%= @recipe.step4 %></br>
-      </div>
+        <br><%= @recipe.step4 %>
+      </a>
     </div>
-    <%# レシピの概要 %>
+  </div>
 
-    <%# 編集ボタンと削除ボタン%>
-    <div class="option">
-      <% if user_signed_in? %>
-        <% if current_user.id == @recipe.user_id %>
-          <%= link_to '編集する', edit_recipe_path(@recipe.id), method: :get, class: "recipe-red-btn" %>
-          <%= link_to '削除する', recipe_path(@recipe.id), method: :delete, class:'recipe-destroy' %>
-        <% end %>
-      <% end %>
-    </div>
-    <%# 編集ボタンと削除ボタン%>
-
+  <div class="sub">
     <%# タイマー %>
     <%= render "shared/timer" %>
 
+    <%# 編集ボタンと削除ボタン%>
+    <div class="btn">
+      <% if user_signed_in? %>
+        <% if current_user.id == @recipe.user_id %>
+          <%= link_to 'レシピを編集', edit_recipe_path(@recipe.id), method: :get, class: 'edit-btn' %>
+          <%= link_to 'レシピを削除', recipe_path(@recipe.id), method: :delete, class: 'destroy-btn' %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
+
+</body>
 
 
 <%= render "shared/footer" %>

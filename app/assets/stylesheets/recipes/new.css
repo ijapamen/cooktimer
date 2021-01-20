@@ -1,10 +1,62 @@
-
-.recipes-image {
-  margin-bottom: 30px;
+/* レシピ投稿ページ */
+.post-recipe {
+  grid-template-rows:
+          [head] 100px
+          [recipe] auto
+          [btn] auto
+          [foot] 100px;
 }
 
-.recipes-text {
+/* レシピ投稿ページ：レシピ */
+.post-recipe .new-recipe {
+  grid-row: recipe;
+}
+
+/* ヘッダー下のボーダー */
+.post-recipe::before {
+  content: '';
+  background: #eeeeee;
+  height: 1px;
+  grid-column: 1 / -1;
+  grid-row: recipe;
+}
+
+.post-recipe h2 {
+  text-align: center;
+}
+
+.recipe b {
+  font-size: 13px;
+}
+
+.image {
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.click-upload {
+  margin-bottom: 20px;
+}
+
+.click-upload p {
+  color: #666;
+  font-weight: normal;
+  text-shadow: none;
+  font-size: 13px;
+  text-align: start;
+  margin: 20px 0 8px 0;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+.name, .material, .step {
   width: 100%;
+  box-sizing: border-box;
+}
+
+.form {
+  width: 100%;
+  box-sizing: border-box;
   margin: 5px 0 15px;
   padding: 10px;
   border: 1px solid #D8D8D8;
@@ -22,46 +74,73 @@
   font-weight: bold;
 }
 
-.weight-bold-text {
-  font-weight: bold;
-  min-width: 170px;
-  margin-bottom: 10px;
-}
-
 .select-box {
   height: 30px;
   width: 30%;
   background-color: #f5f5f5;
   padding-left: 10px;
   margin-bottom: 25px;
-  
 }
 
-.img-upload {
-  flex-wrap: wrap;
-  padding: 2vh 0;
+/* レシピ投稿ページ：投稿・もどるボタン */
+.post-recipe .btn {
+  grid-row: btn;
 }
 
-.click-upload>p {
-  margin-bottom: 15px;
-}
-
-
-.back-btn {
-  display: block;
-  text-align: center;
+/* 投稿・変更（編集ページ）ボタン */
+.post-btn {
   width: 100%;
-  margin: 5px 0 15px;
+  margin-bottom: 20px;
   padding: 10px;
-  background-color: #81dcf3;
+  background-color: #f36710;
   border-radius: 20px;
   color: #fff;
   border: 0;
-  font-size: 18px;
+  font-size: 16px;
   font-family: "游ゴシック", "YuGothic";
+  text-decoration: none;
+}
+
+.post-btn:hover {
+  background-color: #f5a123;
+  text-decoration: underline;
+}
+
+/* もどるボタン */
+.back-btn {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f5a123;
+  border-radius: 20px;
+  color: #fff;
+  border: 0;
+  font-size: 16px;
+  font-family: "游ゴシック", "YuGothic";
+  text-decoration: none;
 }
 
 .back-btn:hover {
   color: #fff;
-  background-color: #84d3ef;
+  background-color: #f8ca25;
+  text-decoration: underline;
 }
+
+/* ===== PC版の設定 ===== */
+@media (min-width: 768px) {
+  /* PC版：ページ全体の設定 */
+  .post-recipe {
+    grid-template-rows:
+            [head] 100px
+            [recipe] auto
+            [btn] auto
+            [foot] 100px;
+  }
+ 
+ /* パーツの配置 */
+  .post-recipe > * {
+    grid-column: 3 / -3;
+  }
+}
+/* ===== PC版の設定ここまで ===== */
