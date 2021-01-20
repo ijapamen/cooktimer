@@ -1,11 +1,9 @@
-
-
 .timer-container {
   margin: 20px auto;
-  width: 100%;
   padding: 15px;
   border: 2px solid #ddd;
   border-radius: 3px;
+  color: black;
   text-align: center;
 }
 
@@ -16,9 +14,6 @@
   font-size: 40px;
   margin-bottom: 15px;
 }
-.timer-container {
-  color: black;
-}
 
 #start {
   color: white;
@@ -28,7 +23,7 @@
 .controls > div {
   cursor: pointer;
   user-select: none;
-  width: 130px;
+  width: 100%;
   background: #ddd;
   height: 45px;
   line-height: 45px;
@@ -36,11 +31,12 @@
 }
 
 .controls {
+  grid-row: sub;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px 15px;
+  gap: 15px 15px;
   overflow: hidden;
-}
-
-.controls > div + div {
-  margin-left: 15px;
 }
 
 .controls > div:hover {
