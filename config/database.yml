@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: cooktimer_production
-  username: cooktimer
-  password: <%= ENV['COOKTIMER_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
