@@ -64,6 +64,19 @@
       }, 10);
     }
 
+    // アラーム音を途中で止める
+    reset.addEventListener('click', function() {
+      alarm.pause();
+    });
+
+    min.addEventListener('click', function() {
+      alarm.pause();
+    });
+
+    sec.addEventListener('click', function() {
+      alarm.pause();
+    });
+
     //スタートとストップの処理
     start.addEventListener('click', function() {
       if (isRunning === false) {
