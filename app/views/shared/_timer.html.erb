@@ -64,7 +64,7 @@
       }, 10);
     }
 
-    // アラーム音を途中で止める
+    // アラーム音が鳴るのを途中で止める
     reset.addEventListener('click', function() {
       alarm.pause();
     });
@@ -80,6 +80,7 @@
     //スタートとストップの処理
     start.addEventListener('click', function() {
       if (isRunning === false) {
+        alarm.load();  //スマホでアラーム音が鳴るよう「スタート」ボタンを押した時点でmp3を読み込む
         isRunning = true;
         start.textContent = 'ストップ';
         startTime = Date.now();
