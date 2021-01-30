@@ -149,19 +149,18 @@ recipe-lists h2 {
   height: auto;
 }
 
-recipe-lists a {
+recipe-lists h3 {
   font-size: 14px;
+  font-weight: normal;
+}
+
+recipe-lists a {
+  text-decoration: none;
 }
 
 recipe-lists a:hover {
   text-decoration: underline;
-  cursor: pointer;
 }
-
-recipe-lists h3 {
-  text-decoration: none;
-}
-
 
 /* ===== PC版の設定 ===== */
 @media (min-width: 768px) {
