@@ -32,11 +32,11 @@
       <div class="list">
         <%= link_to recipe_path(recipe.id) do %>
           <div class='recipe-img-content'>
-            <%= image_tag recipe.image.variant(resize: '350x350'), class: "recipe-img" if recipe.image.attached? %>
+            <%= image_tag recipe.image.variant(resize_to_fill: [300, 200]), class: "recipe-img" if recipe.image.attached? %>
           </div>
-          <a class='recipe-name'>
+          <h3 class='recipe-name'>
             <%= recipe.name %>
-          </a>
+          </h3>
         <% end %>
       </div>
     <% end %>
