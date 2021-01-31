@@ -17,32 +17,32 @@ RSpec.describe Recipe, type: :model do
       it 'imageが空だと登録できない' do
         @recipe.image = nil
         @recipe.valid?
-        expect(@recipe.errors.full_messages).to include("Image can't be blank")
+        expect(@recipe.errors.full_messages).to include("画像を入力してください")
       end
       it 'nameが空だと登録できない' do
         @recipe.name = ''
         @recipe.valid?
-        expect(@recipe.errors.full_messages).to include("Name can't be blank")
+        expect(@recipe.errors.full_messages).to include("料理名を入力してください")
       end
       it 'person_idの値が0だと登録できない' do
         @recipe.person_id = '0'
         @recipe.valid?
-        expect(@recipe.errors.full_messages).to include('Person must be other than 0')
+        expect(@recipe.errors.full_messages).to include('人数分は0以外の値にしてください')
       end
       it 'materialが空だと登録できない' do
         @recipe.material = ''
         @recipe.valid?
-        expect(@recipe.errors.full_messages).to include("Material can't be blank")
+        expect(@recipe.errors.full_messages).to include("材料を入力してください")
       end
       it 'step1が空だと登録できない' do
         @recipe.step1 = ''
         @recipe.valid?
-        expect(@recipe.errors.full_messages).to include("Step1 can't be blank")
+        expect(@recipe.errors.full_messages).to include("作り方のSTEP1を入力してください")
       end
       it 'userが紐付いていないと登録できない' do
         @recipe.user = nil
         @recipe.valid?
-        expect(@recipe.errors.full_messages).to include('User must exist')
+        expect(@recipe.errors.full_messages).to include('Userを入力してください')
       end
     end
   end

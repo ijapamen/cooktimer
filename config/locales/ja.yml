@@ -1,0 +1,11 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       nickname: ニックネーム
+     recipe:
+       image: 画像
+       name: 料理名
+       material: 材料
+       person_id: 人数分
+       step1: 作り方のSTEP1
