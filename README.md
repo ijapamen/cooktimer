@@ -50,12 +50,16 @@ http://18.180.221.158
 <br>
 
 ### 1. ユーザー管理機能（devise）
-### 2. レシピ投稿機能（ActiveStorage）（ActiveHash）
+### 2. レシピ投稿機能（ActiveStorage)(ActiveHash)  ●画像アップロード先：AWS S3
 ### 3. レシピ一覧表示機能
 ### 4. レシピ詳細表示機能
 ### 5. レシピ削除機能
 ### 6. レシピ編集機能
 ### 7. タイマー機能（JavaScript）
+
+<br>
+
+### ●デプロイ：AWS EC2  
 
 <br>
 
