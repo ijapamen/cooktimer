@@ -1,7 +1,12 @@
+
+[![Image from Gyazo](https://i.gyazo.com/e2387e4c61d3b85083c08fc662cc9c89.png)](https://gyazo.com/e2387e4c61d3b85083c08fc662cc9c89)
+
+<br>
+
+# アプリケーション名
 ### タイマー付きレシピアプリ 
 # **COOK TIMER**
 
-[![Image from Gyazo](https://i.gyazo.com/e2387e4c61d3b85083c08fc662cc9c89.png)](https://gyazo.com/e2387e4c61d3b85083c08fc662cc9c89)
 
 <br>
 <br>
